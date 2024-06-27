@@ -15,7 +15,8 @@ const UsersPage = () => {
       // refetchOnMount : false,
       // refetchOnWindowFocus:false,
       // refetchInterval: 10 * 1000,
-      enabled: false,
+      // enabled: false,
+      onSuccess: () => console.log(succees),
     }
   );
 
