@@ -7,7 +7,8 @@ const UsersPage = () => {
   };
 
   const { data, isLoading, isError, error } = useQuery(["users"], fetchUsers, {
-    cacheTime: 3000,
+    // cacheTime: 3000,
+    // staleTime: 5 * 1000,
   });
 
   // console.log(isError , error);
