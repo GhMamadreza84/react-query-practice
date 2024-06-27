@@ -1,8 +1,8 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import HomePage from "./components/HomePage";
 import { Route, Routes } from "react-router-dom";
-import UsersPage from "./components/UsersPage";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import HomePage from "./components/HomePage";
+import UsersPage from "./components/UsersPage";
 
 function App() {
   const queryCLient = new QueryClient();
