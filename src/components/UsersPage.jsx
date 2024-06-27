@@ -6,7 +6,7 @@ const UsersPage = () => {
     return res.data;
   };
 
-  const { data, isLoading, isError, error, refetch } = useQuery(
+  const { data, isLoading, isError, error, isFetching, refetch } = useQuery(
     ["users"],
     fetchUsers,
     {
@@ -25,7 +25,7 @@ const UsersPage = () => {
   return (
     <div>
       <button onClick={refetch}>Fetch</button>
-      {isLoading && <h1>Loading ... </h1>}
+      {isLoading && isFetching && <h1>Loading ... </h1>}
       {data?.map((i) => (
         <h4 key={i.id}>{i.name}</h4>
       ))}
