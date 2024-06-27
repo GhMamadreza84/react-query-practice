@@ -9,6 +9,8 @@ const UsersPage = () => {
   const { data, isLoading, isError, error } = useQuery(["users"], fetchUsers, {
     // cacheTime: 3000,
     // staleTime: 5 * 1000,
+    // refetchOnMount : false,
+    // refetchOnWindowFocus:false,
   });
 
   // console.log(isError , error);
