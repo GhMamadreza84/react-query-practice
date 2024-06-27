@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 const UsersPage = () => {
   const fetchUsers = async () => {
-    const res = await axios.get("https://jsonplaceholder.typicode.com/users");
+    const res = await axios.get("https://jasonplaceholder.typicode.com/users");
     return res.data;
   };
 
@@ -15,8 +15,9 @@ const UsersPage = () => {
       // refetchOnMount : false,
       // refetchOnWindowFocus:false,
       // refetchInterval: 10 * 1000,
-      // enabled: false,
-      onSuccess: () => console.log(succees),
+      enabled: false,
+      // onSuccess: () => console.log("succees"),
+      // onError: () => console.log("error"),
     }
   );
 
