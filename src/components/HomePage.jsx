@@ -8,7 +8,7 @@ const HomePage = () => {
 
   const { data, isLoading, isError, error } = useQuery(["users"], fetchUsers);
 
-  console.log(isError , error);
+  // console.log(isError , error);
   if (isLoading) return <h1>Loading ...</h1>;
   if(isError) return <h1>Something Went Wrong  - {error.message}</h1>
   return (
