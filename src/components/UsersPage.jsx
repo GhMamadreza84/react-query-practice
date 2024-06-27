@@ -11,6 +11,7 @@ const UsersPage = () => {
     // staleTime: 5 * 1000,
     // refetchOnMount : false,
     // refetchOnWindowFocus:false,
+    refetchInterval: 10 * 1000,
   });
 
   // console.log(isError , error);
