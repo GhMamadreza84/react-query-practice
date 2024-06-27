@@ -6,11 +6,13 @@ const UsersPage = () => {
     return res.data;
   };
 
-  const { data, isLoading, isError, error } = useQuery(["users"], fetchUsers);
+  const { data, isLoading, isError, error } = useQuery(["users"], fetchUsers, {
+    cacheTime: 3000,
+  });
 
   // console.log(isError , error);
   if (isLoading) return <h1>Loading ...</h1>;
-  if(isError) return <h1>Something Went Wrong  - {error.message}</h1>
+  if (isError) return <h1>Something Went Wrong - {error.message}</h1>;
   return (
     <div>
       {data.map((i) => (
