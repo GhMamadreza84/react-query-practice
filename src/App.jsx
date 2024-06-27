@@ -2,6 +2,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import HomePage from "./components/HomePage";
 import { Route, Routes } from "react-router-dom";
 import UsersPage from "./components/UsersPage";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 function App() {
   const queryCLient = new QueryClient();
@@ -12,6 +13,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/users" element={<UsersPage />} />
         </Routes>
+        <ReactQueryDevtools />
       </QueryClientProvider>
     </>
   );
