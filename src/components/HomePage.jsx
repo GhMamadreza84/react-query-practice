@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 const HomePage = () => {
   const fetchUsers = async () => {
-    const res = await axios.get("https://jsonplaceholder.typicode.com/users");
+    const res = await axios.get("https://ajsonplaceholder.typicode.com/users");
     return res.data;
   };
 
@@ -10,7 +10,7 @@ const HomePage = () => {
 
   console.log(isError , error);
   if (isLoading) return <h1>Loading ...</h1>;
-
+  if(isError) return <h1>Something Went Wrong  - {error.message}</h1>
   return (
     <div>
       {data.map((i) => (
