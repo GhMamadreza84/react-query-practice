@@ -16,7 +16,7 @@ const useUsersData = () => {
     const res = await axios.get("https://jsonplaceholder.typicode.com/users");
     return res.data;
   };  
-  useQuery(["users"], fetchUsers, {
+  return useQuery(["users"], fetchUsers, {
     // cacheTime: 3000,
     // staleTime: 5 * 1000,
     // refetchOnMount : false,
