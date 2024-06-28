@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
 const UserDetails = () => {
   const { id } = useParams();
@@ -15,13 +15,13 @@ const UserDetails = () => {
   return (
     <div>
       UserDetails - ID : {id}
-      {data.map((i) => {
+      {/* {data?.map((i) => (
         <div key={i.id}>
           <h2>{i.name}</h2>
           <h3>{i.username}</h3>
           <h4>{i.email}</h4>
-        </div>;
-      })}
+        </div>
+      ))}    */}
     </div>
   );
 };
