@@ -8,7 +8,19 @@ const UserDetails = () => {
     return await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
   };
   const { data } = useQuery(["users", id], fetchUserDetails);
-  return <div>UserDetails - ID : {id}</div>;
+  console.log(data);
+  return (
+    <div>
+      UserDetails - ID : {id}
+      {data.map((i) => {
+        <div key={i.id}>
+          <h2>{i.name}</h2>
+          <h3>{i.username}</h3>
+          <h4>{i.email}</h4>
+        </div>;
+      })}
+    </div>
+  );
 };
 
 export default UserDetails;
