@@ -4,13 +4,7 @@ import axios from "axios";
 
 const UserDetails = () => {
   const { id } = useParams();
-  const fetchUserDetails = async () => {
-    const res = await axios.get(
-      `https://jsonplaceholder.typicode.com/users/${id}`
-    );
-    return res.data;
-  };
-  const { data , isLoading } = useQuery(["users", id], fetchUserDetails);
+  
   console.log({data});
   return (
     <div>
