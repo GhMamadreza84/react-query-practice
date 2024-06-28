@@ -12,13 +12,7 @@ const UserDetails = () => {
   return (
     <div>
       UserDetails - ID : {id}
-      {data.map((i) => {
-        <div key={i.id}>
-          <h2>{i.name}</h2>
-          <h3>{i.username}</h3>
-          <h4>{i.email}</h4>
-        </div>;
-      })}
+      
     </div>
   );
 };
