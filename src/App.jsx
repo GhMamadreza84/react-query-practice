@@ -15,7 +15,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/users" element={<UsersPage />} />
           <Route path="/users/:id" element={<UserDetails />} />
-          <Route path="/users/:id" element={<Form />} />
+          <Route path="/users/form" element={<Form />} />
         </Routes>
         <ReactQueryDevtools />
       </QueryClientProvider>
