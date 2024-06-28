@@ -2,17 +2,16 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 
 const Form = () => {
-  const addPost = () => {
-    return axios.post("https://jsonplaceholder.typicode.com/posts", {
+ 
+  const { mutate, data } = 
+  console.log(data);
+  const sendHandler = () => {
+    const data = {
       title: "foo",
       body: "bar",
       userId: 1,
-    });
-  };
-  const { mutate ,data } = useMutation(addPost);
-  console.log(data);
-  const sendHandler = () => {
-    mutate();
+    };
+    mutate(data);
   };
   return (
     <div>
