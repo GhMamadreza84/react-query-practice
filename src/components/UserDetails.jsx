@@ -1,11 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
+
 import { useParams } from "react-router-dom";
-import axios from "axios";
+import { useUserDetails } from "../hooks/queries";
 
 const UserDetails = () => {
   const { id } = useParams();
-  
-  console.log({data});
+  const { data, isLoading } = useUserDetails(id);
+  console.log({ data });
   return (
     <div>
       UserDetails - ID : {id}
