@@ -9,8 +9,8 @@ const Form = () => {
       userId: 1,
     });
   };
-  const { mutate } = useMutation(addPost);
-  console.log(mutate);
+  const { mutate ,data } = useMutation(addPost);
+  console.log(data);
   const sendHandler = () => {
     mutate();
   };
