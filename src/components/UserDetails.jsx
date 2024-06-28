@@ -10,11 +10,12 @@ const UserDetails = () => {
     );
     return res.data;
   };
-  const { data } = useQuery(["users", id], fetchUserDetails);
+  const { data , isLoading } = useQuery(["users", id], fetchUserDetails);
   console.log({data});
   return (
     <div>
       UserDetails - ID : {id}
+      {isLoading && <h2>Loading ...</h2>}
       <div key={data?.id}>
         <h2>{data?.name}</h2>
         <h3>{data?.username}</h3>
