@@ -11,17 +11,15 @@ const UserDetails = () => {
     return res.data;
   };
   const { data } = useQuery(["users", id], fetchUserDetails);
-  console.log(data);
+  console.log({data});
   return (
     <div>
       UserDetails - ID : {id}
-      {/* {data?.map((i) => (
-        <div key={i.id}>
-          <h2>{i.name}</h2>
-          <h3>{i.username}</h3>
-          <h4>{i.email}</h4>
-        </div>
-      ))}    */}
+      <div key={data?.id}>
+        <h2>{data?.name}</h2>
+        <h3>{data?.username}</h3>
+        <h4>{data?.email}</h4>
+      </div>
     </div>
   );
 };
