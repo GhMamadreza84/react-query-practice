@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { Link } from "react-router-dom";
 const UsersPage = () => {
   const fetchUsers = async () => {
     const res = await axios.get("https://jsonplaceholder.typicode.com/users");
@@ -29,7 +30,9 @@ const UsersPage = () => {
       <button onClick={refetch}>Fetch</button>
       {isLoading && isFetching && <h1>Loading ... </h1>}
       {data?.map((i) => (
-        <h4 key={i.id}>{i.name}</h4>
+        <Link key={i.id} to={`/users/${i.id}`}>
+          <h4>{i.name}</h4>
+        </Link>
       ))}
     </div>
   );
